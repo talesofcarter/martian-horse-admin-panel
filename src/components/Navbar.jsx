@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CgMenuRight } from "react-icons/cg";
-const Navbar = () => {
+const Navbar = ({ setToken }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -13,7 +13,10 @@ const Navbar = () => {
         />
 
         {/* Logout button for desktop */}
-        <button className="hidden md:block bg-gray-900 text-white text-base px-6 py-2 rounded-md hover:bg-gray-800 transition-colors cursor-pointer">
+        <button
+          onClick={() => setToken("")}
+          className="hidden md:block bg-gray-900 text-white text-base px-6 py-2 rounded-md hover:bg-gray-800 transition-colors cursor-pointer"
+        >
           Logout
         </button>
 
