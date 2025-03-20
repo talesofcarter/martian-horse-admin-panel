@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <header className=" shadow-md">
+    <header className="custom-shadow">
       <nav className="flex items-center justify-between px-[4%] py-3 md:px-6">
         <img
           className="w-[max(10%,80px)] cursor-pointer"

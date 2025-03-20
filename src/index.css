@@ -1,1 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
 @import "tailwindcss";
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px;
+}
