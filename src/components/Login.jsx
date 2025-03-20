@@ -1,6 +1,16 @@
 import React from "react";
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onSubmitHandler = async (e) => {
+    try {
+      e.preventDefault();
+    } catch (error) {}
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center w-full login-background">
       <div className="bg-white shadow-lg rounded-lg px-8 py-8 max-w-md w-full mx-4">
@@ -10,10 +20,8 @@ const Login = () => {
           <p className="mt-2 text-sm text-gray-600">Sign in to your account</p>
         </div>
 
-        {/* Form */}
-        <form>
+        <form onSubmit={onSubmitHandler}>
           <div className="space-y-6">
-            {/* Email Field */}
             <div>
               <label
                 htmlFor="email"
@@ -22,6 +30,8 @@ const Login = () => {
                 Email Address
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 id="email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-colors duration-200 placeholder-gray-400"
                 type="email"
@@ -40,6 +50,8 @@ const Login = () => {
                 Password
               </label>
               <input
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 id="password"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-colors duration-200 placeholder-gray-400"
                 type="password"
