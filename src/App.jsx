@@ -7,14 +7,19 @@ import List from "./pages/List";
 import Orders from "./pages/Orders";
 import { useState } from "react";
 import Login from "./components/Login";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const [token, setToken] = useState("");
 
   return (
     <main className="min-h-screen flex flex-col">
+      <ToastContainer />
       {token === "" ? (
-        <Login />
+        <Login setToken={setToken} />
       ) : (
         <>
           <Navbar />
