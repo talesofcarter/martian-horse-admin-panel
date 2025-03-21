@@ -17,6 +17,8 @@ const Add = () => {
   const [subCategory, setSubCategory] = useState("Casual");
   const [bestseller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Casual");
+  const [selectedSubCategory, setSelectedSubCategory] = useState("Accessories");
 
   return (
     <form className="w-full max-w-md mx-auto">
@@ -33,7 +35,10 @@ const Add = () => {
           image4={image4}
         />
       </section>
-      <ProductDetails />
+      <ProductDetails
+        selectedCategory={selectedCategory}
+        selectedSubCategory={selectedSubCategory}
+      />
       <AddButton />
     </form>
   );

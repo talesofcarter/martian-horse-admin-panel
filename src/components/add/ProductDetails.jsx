@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductDetails = () => {
+const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
   return (
     <>
       <div className="mt-6">
@@ -46,13 +46,12 @@ const ProductDetails = () => {
         </label>
         <div className="relative">
           <select
+            defaultValue={selectedSubCategory}
             id="product-category"
             name="productCategory"
             className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400"
           >
-            <option value="" disabled selected>
-              Select a category...
-            </option>
+            <option value="">Select a category...</option>
             <option value="Accessories">Accessories</option>
             <option value="Blouses">Blouses</option>
             <option value="Dresses">Dresses</option>
@@ -86,13 +85,12 @@ const ProductDetails = () => {
         </label>
         <div className="relative">
           <select
+            defaultValue={selectedCategory}
             id="product-category"
             name="productCategory"
             className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400"
           >
-            <option value="" disabled selected>
-              Select a subcategory...
-            </option>
+            <option value="">Select a subcategory...</option>
             <option value="Official">Official</option>
             <option value="Casual">Casual</option>
             <option value="Vacation">Vacation</option>
