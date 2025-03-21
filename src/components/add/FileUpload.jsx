@@ -48,7 +48,7 @@ const FileUpload = ({
                 (console.log(imageStates[image]),
                 (
                   <img
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover rounded-md"
                     src={URL.createObjectURL(imageStates[image])}
                     alt=""
                   />

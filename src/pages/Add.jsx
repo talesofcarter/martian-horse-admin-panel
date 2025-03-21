@@ -5,6 +5,7 @@ import ProductDetails from "../components/add/ProductDetails";
 import AddButton from "../components/add/AddButton";
 import axios from "axios";
 import { backendUrl } from "../App";
+import { toast } from "react-toastify";
 
 const Add = ({ token }) => {
   const [image1, setImage1] = useState(false);
@@ -42,8 +43,23 @@ const Add = ({ token }) => {
         formData,
         { headers: { token } }
       );
-      console.log(response);
-    } catch (error) {}
+
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setName("");
+        setDescription("");
+        setImage1(false);
+        setImage2(false);
+        setImage3(false);
+        setImage4(false);
+        setPrice("");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
   };
 
   return (
