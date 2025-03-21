@@ -28,7 +28,7 @@ const FileUpload = ({
     <>
       {/* Uploaded Files Preview */}
       <div
-        className="grid grid-cols-4 gap-3"
+        className="grid grid-cols-2 sm:grid-cols-4 gap-3"
         role="region"
         aria-label="Image previews"
       >
@@ -40,10 +40,10 @@ const FileUpload = ({
           >
             <label
               htmlFor={image}
-              className="text-gray-400 text-sm cursor-pointer"
+              className="text-gray-400 text-sm cursor-pointer w-full h-full flex items-center justify-center"
             >
               {!imageStates[image] ? (
-                <IoCloudUploadOutline className="w-12 h-12 text-gray-400" />
+                <IoCloudUploadOutline className="w-8 h-8 sm:w-12 sm:h-12 text-gray-400" />
               ) : (
                 (console.log(imageStates[image]),
                 (

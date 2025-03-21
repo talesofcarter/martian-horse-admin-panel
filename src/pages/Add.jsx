@@ -6,7 +6,7 @@ import AddButton from "../components/add/AddButton";
 import axios from "axios";
 import { backendUrl } from "../App";
 
-const Add = () => {
+const Add = ({ token }) => {
   const [image1, setImage1] = useState(false);
   const [image2, setImage2] = useState(false);
   const [image3, setImage3] = useState(false);
@@ -39,15 +39,19 @@ const Add = () => {
 
       const response = await axios.post(
         backendUrl + "/api/product/add",
-        formData
+        formData,
+        { headers: { token } }
       );
       console.log(response);
     } catch (error) {}
   };
 
   return (
-    <form onSubmit={onSubmitHandler} className="w-full max-w-md mx-auto">
-      <section className="bg-white rounded-xl shadow-sm custom-shadow p-6">
+    <form
+      onSubmit={onSubmitHandler}
+      className="w-full max-w-md mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <section className="bg-white rounded-xl shadow-sm custom-shadow p-6 sm:p-8">
         <Header />
         <FileUpload
           setImage1={setImage1}
