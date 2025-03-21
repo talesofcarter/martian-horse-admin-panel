@@ -3,6 +3,8 @@ import Header from "../components/add/Header";
 import FileUpload from "../components/add/FileUpload";
 import ProductDetails from "../components/add/ProductDetails";
 import AddButton from "../components/add/AddButton";
+import axios from "axios";
+import { backendUrl } from "../App";
 
 const Add = () => {
   const [image1, setImage1] = useState(false);
@@ -12,16 +14,39 @@ const Add = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(100);
   const [category, setCategory] = useState("Dresses");
   const [subCategory, setSubCategory] = useState("Casual");
   const [bestseller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("Casual");
-  const [selectedSubCategory, setSelectedSubCategory] = useState("Accessories");
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("price", price);
+      formData.append("category", category);
+      formData.append("subCategory", subCategory);
+      formData.append("bestseller", bestseller);
+      formData.append("sizes", JSON.stringify(sizes));
+
+      image1 && formData.append("image1", image1);
+      image2 && formData.append("image2", image2);
+      image3 && formData.append("image3", image3);
+      image4 && formData.append("image4", image4);
+
+      const response = await axios.post(
+        backendUrl + "/api/product/add",
+        formData
+      );
+      console.log(response);
+    } catch (error) {}
+  };
 
   return (
-    <form className="w-full max-w-md mx-auto">
+    <form onSubmit={onSubmitHandler} className="w-full max-w-md mx-auto">
       <section className="bg-white rounded-xl shadow-sm custom-shadow p-6">
         <Header />
         <FileUpload
@@ -36,8 +61,20 @@ const Add = () => {
         />
       </section>
       <ProductDetails
-        selectedCategory={selectedCategory}
-        selectedSubCategory={selectedSubCategory}
+        name={name}
+        description={description}
+        category={category}
+        subCategory={subCategory}
+        price={price}
+        bestseller={bestseller}
+        sizes={sizes}
+        setName={setName}
+        setDescription={setDescription}
+        setCategory={setCategory}
+        setSubCategory={setSubCategory}
+        setPrice={setPrice}
+        setBestseller={setBestseller}
+        setSizes={setSizes}
       />
       <AddButton />
     </form>

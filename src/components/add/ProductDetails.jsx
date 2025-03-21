@@ -1,6 +1,29 @@
 import React from "react";
 
-const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
+const ProductDetails = ({
+  name,
+  description,
+  category,
+  subCategory,
+  price,
+  bestseller,
+  sizes,
+  setName,
+  setDescription,
+  setCategory,
+  setSubCategory,
+  setPrice,
+  setBestseller,
+  setSizes,
+}) => {
+  const handleSizeToggle = (size) => {
+    setSizes((prev) => {
+      const newSizes = prev.includes(size)
+        ? prev.filter((item) => item !== size)
+        : [...prev, size];
+      return newSizes;
+    });
+  };
   return (
     <>
       <div className="mt-6">
@@ -11,6 +34,8 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
           Product Name
         </label>
         <input
+          onChange={(e) => setName(e.target.value)}
+          value={name}
           id="product-name"
           name="productName"
           type="text"
@@ -28,6 +53,8 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
           Product Description
         </label>
         <textarea
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
           id="product-name"
           name="productName"
           type="text"
@@ -46,7 +73,8 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
         </label>
         <div className="relative">
           <select
-            defaultValue={selectedSubCategory}
+            onChange={(e) => setCategory(e.target.value)}
+            defaultValue={category}
             id="product-category"
             name="productCategory"
             className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400"
@@ -85,7 +113,8 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
         </label>
         <div className="relative">
           <select
-            defaultValue={selectedCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+            defaultValue={subCategory}
             id="product-category"
             name="productCategory"
             className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400"
@@ -122,6 +151,8 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
           Product Price
         </label>
         <input
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
           id="product-price"
           name="productPrice"
           type="number"
@@ -131,7 +162,6 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
           className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 hover:border-gray-400"
         />
       </div>
-
       <div className="mt-6">
         <label
           htmlFor="sizes"
@@ -147,11 +177,17 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
                 id={`size-${size}`}
                 name="sizes"
                 value={size}
+                checked={sizes.includes(size)}
+                onChange={() => handleSizeToggle(size)}
                 className="hidden peer"
               />
               <label
                 htmlFor={`size-${size}`}
-                className="inline-block px-3 py-2 text-gray-700 font-bold bg-gray-100 border border-gray-300 rounded-md cursor-pointer peer-checked:bg-zinc-800 peer-checked:text-white peer-checked:border-zinc-800"
+                className={`flex justify-center w-10 h-10 px-5 py-2 rounded-md border cursor-pointer transition-all duration-200 ${
+                  sizes.includes(size)
+                    ? "bg-zinc-800 text-white border-zinc-800 font-bold"
+                    : "bg-gray-100 text-gray-700 border-gray-300"
+                }`}
               >
                 {size}
               </label>
@@ -159,9 +195,10 @@ const ProductDetails = ({ selectedCategory, selectedSubCategory }) => {
           ))}
         </div>
       </div>
-
       <div className="mt-6 flex items-center gap-2">
         <input
+          onChange={() => setBestseller((prev) => !prev)}
+          checked={bestseller}
           type="checkbox"
           id="bestseller"
           name="bestseller"
