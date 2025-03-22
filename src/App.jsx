@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
+export const currency = "KES";
 
 function App() {
   const [token, setToken] = useState(
@@ -22,24 +23,21 @@ function App() {
   }, [token]);
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col bg-white">
       <ToastContainer />
       {token === "" ? (
         <Login setToken={setToken} />
       ) : (
         <>
           <Navbar setToken={setToken} />
-          <div className="flex flex-1">
+          <div className="flex flex-1 w-full">
             <Sidebar />
-            <div className="w-[70%] mx-auto ml-[max(5vw, 25px)] my-8 text-gray-600 text-base">
+            <div className="flex-1 py-6 px-4 sm:px-6 lg:px-8 text-gray-600 text-base">
               <Routes>
                 <Route path="/add" element={<Add token={token} />} />
                 <Route path="/list" element={<List token={token} />} />
                 <Route path="/orders" element={<Orders token={token} />} />
               </Routes>
-            </div>
-            <div className="flex-1 p-4 md:p-6 bg-gray-50">
-              <Outlet />
             </div>
           </div>
         </>
