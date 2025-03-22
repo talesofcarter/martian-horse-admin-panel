@@ -79,8 +79,8 @@ const List = ({ token }) => {
                   <p className="font-medium text-gray-800">{item.name}</p>
                   <p className="text-gray-600">{item.category}</p>
                   <p className="text-gray-800">
-                    {currency}
-                    {item.price}
+                    {currency}{" "}
+                    {new Intl.NumberFormat("en-KE").format(item.price)}
                   </p>
                 </div>
                 <button
@@ -114,8 +114,7 @@ const List = ({ token }) => {
               <p className="hidden sm:block text-gray-800">{item.name}</p>
               <p className="hidden sm:block text-gray-600">{item.category}</p>
               <p className="hidden sm:block text-gray-800">
-                {currency}
-                {item.price}
+                {currency} {new Intl.NumberFormat("en-KE").format(item.price)}
               </p>
               <button
                 onClick={() => removeProduct(item._id)}
