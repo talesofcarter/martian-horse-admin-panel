@@ -41,4 +41,25 @@
   .overflow-x-auto td:nth-child(5)::before {
     content: "Actions";
   }
+
+  section {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .overflow-x-auto {
+    width: 100%;
+  }
+  .overflow-x-auto table {
+    width: 100%;
+  }
+  .overflow-x-auto td {
+    font-size: 0.875rem; /* 14px */
+    padding: 0.75rem 0.5rem;
+  }
+  .overflow-x-auto button {
+    font-size: 0.75rem; /* 12px */
+    padding: 0.5rem;
+  }
 }
