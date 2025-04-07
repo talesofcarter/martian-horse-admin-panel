@@ -22,7 +22,8 @@ body {
   background-repeat: no-repeat;
 }
 
-.iOS-login-border {
+.iOS-login-border,
+.iOS-border {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
