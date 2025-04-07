@@ -3,6 +3,11 @@ import { CgMenuRight } from "react-icons/cg";
 const Navbar = ({ setToken }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  function signOut() {
+    setIsMenuOpen(false);
+    setToken("");
+  }
+
   return (
     <header className="custom-shadow sticky top-0 z-50 bg-white">
       <nav className="flex items-center justify-between px-[4%] py-3 md:px-6">
@@ -131,10 +136,7 @@ const Navbar = ({ setToken }) => {
             {/* Logout Button */}
             <button
               className="w-full mt-2 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors duration-200"
-              onClick={() => {
-                setIsMenuOpen(false);
-                // Add your logout logic here
-              }}
+              onClick={signOut}
             >
               Logout
             </button>
