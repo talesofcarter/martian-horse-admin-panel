@@ -22,10 +22,16 @@ body {
   background-repeat: no-repeat;
 }
 
-.iOS-login-border,
-.iOS-border {
+.iOS-login-border {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: 1px solid #d1d5dc;
+}
+
+.ios-border-fix {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #d1d5db;
 }

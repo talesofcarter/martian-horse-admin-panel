@@ -41,7 +41,7 @@ const ProductDetails = ({
           type="text"
           placeholder="Type here..."
           required
-          className="w-full px-4 py-2 text-zinc-800 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 placeholder-zinc-600 text-sm sm:text-base iOS-border"
+          className="w-full px-4 py-2 text-zinc-800 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 placeholder-zinc-600 text-sm sm:text-base ios-border-fix"
         />
       </div>
 
@@ -60,7 +60,7 @@ const ProductDetails = ({
           type="text"
           placeholder="Enter product description..."
           required
-          className="w-full px-4 py-2 text-zinc-800 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 placeholder-zinc-600 text-sm sm:text-base min-h-[100px] sm:min-h-[120px] iOS-border"
+          className="w-full px-4 py-2 text-zinc-800 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 placeholder-zinc-600 text-sm sm:text-base min-h-[100px] sm:min-h-[120px]"
         ></textarea>
       </div>
 
@@ -77,7 +77,7 @@ const ProductDetails = ({
             defaultValue={category}
             id="product-category"
             name="productCategory"
-            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base iOS-border"
+            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base"
           >
             <option value="">Select a category...</option>
             <option value="Accessories">Accessories</option>
@@ -116,7 +116,7 @@ const ProductDetails = ({
             defaultValue={subCategory}
             id="product-category"
             name="productCategory"
-            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base iOS-border"
+            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base"
           >
             <option value="">Select a subcategory...</option>
             <option value="Official">Official</option>
@@ -157,7 +157,7 @@ const ProductDetails = ({
           placeholder="Price in KES"
           min="0"
           step="1"
-          className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 hover:border-gray-400 text-sm sm:text-base iOS-border"
+          className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 hover:border-gray-400 text-sm sm:text-base ios-border-fix"
         />
       </div>
       <div className="mt-6">
@@ -177,7 +177,7 @@ const ProductDetails = ({
                 value={size}
                 checked={sizes.includes(size)}
                 onChange={() => handleSizeToggle(size)}
-                className="hidden peer iOS-border"
+                className="hidden peer"
               />
               <label
                 htmlFor={`size-${size}`}
@@ -200,7 +200,7 @@ const ProductDetails = ({
           type="checkbox"
           id="bestseller"
           name="bestseller"
-          className="w-5 h-5 sm:w-5 sm:h-5 text-zinc-800 border-gray-300 rounded focus:ring-offset-2 cursor-pointer transition-all duration-200 iOS-border"
+          className="w-5 h-5 sm:w-5 sm:h-5 text-zinc-800 border-gray-300 rounded focus:ring-offset-2 cursor-pointer transition-all duration-200 ios-border-fix"
         />
         <label
           htmlFor="bestseller"
