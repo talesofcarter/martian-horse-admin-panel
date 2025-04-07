@@ -196,51 +196,43 @@ const Orders = ({ token }) => {
   );
 
   return (
-    <section className="p-4 max-w-7xl mx-auto relative min-h-screen">
+    <section className="orders-dashboard">
       <h3 className="text-xl font-semibold mb-6">Orders Dashboard</h3>
 
       <div className="overflow-x-auto">
-        <table className="w-full bg-white shadow-sm rounded-lg table-fixed">
-          <thead className="bg-gray-800 text-white">
+        <table className="order-table">
+          <thead className="table-header">
             <tr>
-              <th className="p-3 text-left text-base font-medium w-1/4">
-                Order ID
-              </th>
-              <th className="p-3 text-left text-base font-medium w-1/5">
-                Order Date
-              </th>
-              <th className="p-3 text-left text-base font-medium w-1/5">
-                Status
-              </th>
-              <th className="p-3 text-left text-base font-medium w-1/5">
-                Price
-              </th>
-              <th className="p-3 text-left text-base font-medium w-1/5"></th>
+              <th>Order ID</th>
+              <th>Order Date</th>
+              <th>Status</th>
+              <th>Price</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr key={order._id} className="border-b hover:bg-gray-50">
-                <td className="p-3 text-base truncate">{order._id}</td>
-                <td className="p-3 text-base">
+              <tr key={order._id} className="table-row">
+                <td className="table-cell" data-label="Order ID">
+                  {order._id}
+                </td>
+                <td className="table-cell" data-label="Date">
                   {new Date(order.date).toLocaleDateString()}
                 </td>
-                <td className="p-3">
+                <td className="table-cell" data-label="Status">
                   <span
-                    className={`px-2 py-1 rounded-full text-sm ${getStatusColor(
-                      order.status
-                    )}`}
+                    className={`status-badge ${getStatusColor(order.status)}`}
                   >
                     {order.status}
                   </span>
                 </td>
-                <td className="p-3 text-base">
+                <td className="table-cell" data-label="Price">
                   {currency} {formatPrice(order.amount)}
                 </td>
-                <td className="p-3">
+                <td className="table-cell" data-label="Actions">
                   <button
                     onClick={() => setSelectedOrder(order)}
-                    className="bg-gray-800 text-white px-3 rounded-md py-3 text-base font-medium transition-all hover:bg-white hover:text-gray-800 border border-transparent hover:border-gray-800 cursor-pointer duration-500"
+                    className="bg-gray-800 text-white px-3 rounded-md py-3 font-medium transition-all hover:bg-white hover:text-gray-800 border border-transparent hover:border-gray-800 duration-500"
                   >
                     View Details
                   </button>
@@ -251,7 +243,7 @@ const Orders = ({ token }) => {
         </table>
       </div>
 
-      <div className="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 text-center font-semibold shadow-md text-base">
+      <div className="total-sales">
         Total Sales: {currency} {formatPrice(totalAmount)}
       </div>
 
