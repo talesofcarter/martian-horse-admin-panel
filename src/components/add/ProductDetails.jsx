@@ -60,7 +60,7 @@ const ProductDetails = ({
           type="text"
           placeholder="Enter product description..."
           required
-          className="w-full px-4 py-2 text-zinc-800 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 placeholder-zinc-600 text-sm sm:text-base min-h-[100px] sm:min-h-[120px]"
+          className="w-full px-4 py-2 text-zinc-800 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-all duration-200 placeholder-zinc-600 text-sm sm:text-base min-h-[100px] sm:min-h-[120px] ios-border-fix"
         ></textarea>
       </div>
 
@@ -77,7 +77,7 @@ const ProductDetails = ({
             defaultValue={category}
             id="product-category"
             name="productCategory"
-            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base"
+            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base ios-border-fix"
           >
             <option value="">Select a category...</option>
             <option value="Accessories">Accessories</option>
@@ -116,7 +116,7 @@ const ProductDetails = ({
             defaultValue={subCategory}
             id="product-category"
             name="productCategory"
-            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base"
+            className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none appearance-none transition-all duration-200 cursor-pointer hover:border-gray-400 text-sm sm:text-base ios-border-fix"
           >
             <option value="">Select a subcategory...</option>
             <option value="Official">Official</option>
@@ -177,7 +177,7 @@ const ProductDetails = ({
                 value={size}
                 checked={sizes.includes(size)}
                 onChange={() => handleSizeToggle(size)}
-                className="hidden peer"
+                className="hidden peer ios-border-fix"
               />
               <label
                 htmlFor={`size-${size}`}
