@@ -1,0 +1,44 @@
+@media (max-width: 640px) {
+  .overflow-x-auto table {
+    display: block;
+  }
+  .overflow-x-auto thead {
+    display: none;
+  }
+  .overflow-x-auto tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .overflow-x-auto td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    padding-right: 1rem;
+  }
+  .overflow-x-auto td::before {
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 1rem;
+    font-weight: bold;
+    text-align: left;
+    content: "";
+  }
+  .overflow-x-auto td:nth-child(1)::before {
+    content: "Order ID";
+  }
+  .overflow-x-auto td:nth-child(2)::before {
+    content: "Order Date";
+  }
+  .overflow-x-auto td:nth-child(3)::before {
+    content: "Status";
+  }
+  .overflow-x-auto td:nth-child(4)::before {
+    content: "Price";
+  }
+  .overflow-x-auto td:nth-child(5)::before {
+    content: "Actions";
+  }
+}

@@ -11,6 +11,7 @@ import {
   FaGlobe,
   FaPhone,
 } from "react-icons/fa";
+import "./../orders.css";
 
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([]);
@@ -117,7 +118,7 @@ const Orders = ({ token }) => {
                 <select
                   onChange={(e) => statusHandler(e, order._id)}
                   value={order.status}
-                  className={`w-full p-2 rounded-md text-sm border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent ${getStatusColor(
+                  className={`w-full p-2 rounded-md text-sm border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent ios-border-fix ${getStatusColor(
                     order.status
                   )} cursor-pointer`}
                 >
