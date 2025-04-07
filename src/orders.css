@@ -34,7 +34,7 @@
 .table-row {
   border-bottom: 1px solid #e5e7eb;
   transition: background-color 0.2s;
-  display: table-row; /* Default behavior for larger screens */
+  display: table-row;
 }
 
 .table-row:hover {
@@ -126,7 +126,7 @@
     margin-bottom: 1rem;
     border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box;
   }
 
   .table-cell {
@@ -135,6 +135,7 @@
     padding: 0.5rem 0;
     white-space: normal;
     width: 100%;
+    overflow: visible;
   }
 
   .table-cell::before {
@@ -148,6 +149,11 @@
     width: 100%;
     padding: 0.75rem;
     margin-top: 0.5rem;
+    display: block;
+    min-height: 44px;
+    line-height: 1;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .popup-content {
@@ -172,7 +178,7 @@
 
   .table-row {
     padding: 0.5rem;
-    width: 90vw; /* Reinforce full width */
+    width: 90vw;
   }
 
   .table-cell {
