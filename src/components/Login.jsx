@@ -48,7 +48,7 @@ const Login = ({ setToken }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 id="email"
-                className="iOS-fix w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-colors duration-200 placeholder-gray-400"
+                className="iOS-login-border w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-colors duration-200 placeholder-gray-400"
                 type="email"
                 placeholder="Enter your email"
                 required
@@ -68,7 +68,7 @@ const Login = ({ setToken }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 id="password"
-                className="iOS-border w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-colors duration-200 placeholder-gray-400"
+                className="iOS-login-border w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-zinc-800 focus:border-zinc-800 outline-none transition-colors duration-200 placeholder-gray-400"
                 type="password"
                 placeholder="Enter your password"
                 required

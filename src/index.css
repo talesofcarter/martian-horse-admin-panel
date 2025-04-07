@@ -22,8 +22,9 @@ body {
   background-repeat: no-repeat;
 }
 
-.iOS-border {
+.iOS-login-border {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border: 1px solid #d1d5dc;
 }
